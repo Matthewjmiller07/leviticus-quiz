@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Ancient Ritual From Leviticus 12:1–15:33 Are You? Take This Quiz To Find Out!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EDEDED;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            margin-bottom: 0.5rem;
+        }
+        input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        button {
+            background-color: #3B3B3B;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+        #result {
+            display: none;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Which Ancient Ritual From Leviticus 12:1–15:33 Are You? Take This Quiz To Find Out!</h1>
+    <form id="quizForm">
+        <p>Question 1/5:</p>
+        <p>How would you describe your approach to life?</p>
+        <input type="radio" name="q1" value="a"> Structured and organized<br>
+        <input type="radio" name="q1" value="b"> Nurturing and caring<br>
+        <input type="radio" name="q1" value="c"> Assertive and dynamic<br>
+        <input type="radio" name="q1" value="d"> Introspective and reflective<br>
+
+        <p>Question 2/5:</p>
+        <p>How do you handle challenges or setbacks?</p>
+        <input type="radio" name="q2" value="a"> Seek guidance and support from others<br>
+        <input type="radio" name="q2" value="b"> Focus on healing and recovery<br>
+        <input type="radio" name="q2" value="c"> Push through with determination<br>
+        <input type="radio" name="q2" value="d"> Retreat and reevaluate the situation<br>
+
+        <p>Question 3/5:</p>
+        <p>What is most important to you in your daily routine?</p>
+        <input type="radio" name="q3" value="a"> Cleanliness and order<br>
+        <input type="radio" name="q3" value="b"> Family and relationships<br>
+        <input type="radio" name="q3" value="c"> Personal growth and development<br>
+        <input type="radio" name="q3" value="d"> Spiritual and emotional well-being<br>
+
+        <p>Question 4/5:</p>
+        <p>How do you handle conflicts or disagreements?</p>
+        <input type="radio" name="q4" value="a"> Seek a balanced resolution<br>
+        <input type="radio" name="q
+
+<input type="radio" name="q4" value="b"> Emphasize empathy and understanding<br>
+        <input type="radio" name="q4" value="c"> Stand your ground and fight for your beliefs<br>
+        <input type="radio" name="q4" value="d"> Withdraw and consider the other person's perspective<br>
+
+        <p>Question 5/5:</p>
+        <p>Which aspect of ancient culture fascinates you the most?</p>
+        <input type="radio" name="q5" value="a"> Religious rituals and ceremonies<br>
+        <input type="radio" name="q5" value="b"> The role of family and community<br>
+        <input type="radio" name="q5" value="c"> Leadership and governance<br>
+        <input type="radio" name="q5" value="d"> Philosophy and spirituality<br>
+
+        <button type="button" onclick="calculateResult()">Submit</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function calculateResult() {
+            const quizForm = document.getElementById("quizForm");
+            let answerCounts = { a: 0, b: 0, c: 0, d: 0 };
+
+            for (let i = 0; i < quizForm.length; i++) {
+                if (quizForm[i].checked) {
+                    answerCounts[quizForm[i].value]++;
+                }
+            }
+
+            let result = "";
+            let maxCount = Math.max(...Object.values(answerCounts));
+            let maxAnswers = Object.keys(answerCounts).filter(answer => answerCounts[answer] === maxCount);
+
+            if (maxAnswers.includes("a")) {
+                result = "Purification After Childbirth (Leviticus 12)";
+            }
+            if (maxAnswers.includes("b")) {
+                result += (result ? ", " : "") + "Healing of Skin Diseases (Leviticus 13)";
+            }
+            if (maxAnswers.includes("c")) {
+                result += (result ? ", " : "") + "Cleansing of Lepers and Leprous Houses (Leviticus 14)";
+            }
+            if (maxAnswers.includes("d")) {
+                result += (result ? ", " : "") + "Laws on Bodily Discharges (Leviticus 15)";
+            }
+
+            document.getElementById("result").innerHTML = "Your result: " + result;
+            document.getElementById("result").style.display = "block";
+        }
+    </script>
+</body>
+</html>
